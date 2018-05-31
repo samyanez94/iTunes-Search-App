@@ -15,6 +15,8 @@
 		22B762AF20BF9BDC00A8D84F /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B762AE20BF9BDC00A8D84F /* Artist.swift */; };
 		22B762B120BF9D0700A8D84F /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B762B020BF9D0700A8D84F /* Genre.swift */; };
 		22B762B320BF9D7A00A8D84F /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B762B220BF9D7A00A8D84F /* Album.swift */; };
+		22B762B520BFA05B00A8D84F /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B762B420BFA05B00A8D84F /* Song.swift */; };
+		22B762B720BFA41800A8D84F /* Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B762B620BFA41800A8D84F /* Stub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		22B762AE20BF9BDC00A8D84F /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		22B762B020BF9D0700A8D84F /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		22B762B220BF9D7A00A8D84F /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		22B762B420BFA05B00A8D84F /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		22B762B620BFA41800A8D84F /* Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stub.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 				22B762AE20BF9BDC00A8D84F /* Artist.swift */,
 				22B762B020BF9D0700A8D84F /* Genre.swift */,
 				22B762B220BF9D7A00A8D84F /* Album.swift */,
+				22B762B420BFA05B00A8D84F /* Song.swift */,
+				22B762B620BFA41800A8D84F /* Stub.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -168,11 +174,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22B762B520BFA05B00A8D84F /* Song.swift in Sources */,
 				22B762AF20BF9BDC00A8D84F /* Artist.swift in Sources */,
 				22B7629C20BF9B6B00A8D84F /* ViewController.swift in Sources */,
 				22B7629A20BF9B6B00A8D84F /* AppDelegate.swift in Sources */,
 				22B762B120BF9D0700A8D84F /* Genre.swift in Sources */,
 				22B762B320BF9D7A00A8D84F /* Album.swift in Sources */,
+				22B762B720BFA41800A8D84F /* Stub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
