@@ -22,7 +22,7 @@ extension AlbumCellViewModel {
         let formatter = DateFormatter()
         formatter.locale = Locale.current
         
-        formatter.dateFormat = "MM dd, yyyy"
+        formatter.dateFormat = "MMM dd, yyyy"
         
         self.releaseDate = formatter.string(from: album.releaseDate)
     }
