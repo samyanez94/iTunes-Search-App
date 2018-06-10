@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2272F09F20CDDB6400781228 /* AlbumListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2272F09E20CDDB6400781228 /* AlbumListController.swift */; };
+		2272F0A120CDDC1100781228 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2272F0A020CDDC1100781228 /* AlbumCell.swift */; };
 		22B7629A20BF9B6B00A8D84F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7629920BF9B6B00A8D84F /* AppDelegate.swift */; };
 		22B7629C20BF9B6B00A8D84F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7629B20BF9B6B00A8D84F /* ViewController.swift */; };
 		22B7629F20BF9B6B00A8D84F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B7629D20BF9B6B00A8D84F /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2272F09E20CDDB6400781228 /* AlbumListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListController.swift; sourceTree = "<group>"; };
+		2272F0A020CDDC1100781228 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		22B7629620BF9B6B00A8D84F /* iTunesClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B7629920BF9B6B00A8D84F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22B7629B20BF9B6B00A8D84F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,8 +78,8 @@
 				22B762AB20BF9BB000A8D84F /* Models */,
 				22B7629920BF9B6B00A8D84F /* AppDelegate.swift */,
 				22B7629D20BF9B6B00A8D84F /* Main.storyboard */,
-				22B762A020BF9B6D00A8D84F /* Assets.xcassets */,
 				22B762A220BF9B6D00A8D84F /* LaunchScreen.storyboard */,
+				22B762A020BF9B6D00A8D84F /* Assets.xcassets */,
 				22B762A520BF9B6D00A8D84F /* Info.plist */,
 			);
 			path = iTunesClient;
@@ -96,6 +100,7 @@
 		22B762AC20BF9BBA00A8D84F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2272F0A020CDDC1100781228 /* AlbumCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -105,6 +110,7 @@
 			children = (
 				22B7629B20BF9B6B00A8D84F /* ViewController.swift */,
 				22B762B820BFB6FA00A8D84F /* SearchResultsController.swift */,
+				2272F09E20CDDB6400781228 /* AlbumListController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -193,9 +199,11 @@
 				22B7629C20BF9B6B00A8D84F /* ViewController.swift in Sources */,
 				22B7629A20BF9B6B00A8D84F /* AppDelegate.swift in Sources */,
 				22B762B920BFB6FA00A8D84F /* SearchResultsController.swift in Sources */,
+				2272F09F20CDDB6400781228 /* AlbumListController.swift in Sources */,
 				22B762B120BF9D0700A8D84F /* Genre.swift in Sources */,
 				22B762B320BF9D7A00A8D84F /* Album.swift in Sources */,
 				22B762BC20BFBC3600A8D84F /* SearchResultsDataSource.swift in Sources */,
+				2272F0A120CDDC1100781228 /* AlbumCell.swift in Sources */,
 				22B762B720BFA41800A8D84F /* Stub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
