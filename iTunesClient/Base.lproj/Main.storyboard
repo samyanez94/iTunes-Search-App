@@ -204,7 +204,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongCell" id="fKm-aO-lrP">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongCell" id="fKm-aO-lrP" customClass="SongCell" customModule="iTunesClient" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="155.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fKm-aO-lrP" id="amw-3J-H0d">
@@ -233,6 +233,10 @@
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cOn-k5-I5l" secondAttribute="trailingMargin" id="v7G-VH-sKB"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="songRuntimeLabel" destination="Abi-dj-YsJ" id="kTH-zd-rEp"/>
+                                    <outlet property="songTitleLabel" destination="cOn-k5-I5l" id="x5m-Zn-NtB"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
