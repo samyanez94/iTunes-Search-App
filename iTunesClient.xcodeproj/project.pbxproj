@@ -109,8 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				22A8B5C020D7350300A8CF6E /* JSONDownloader.swift */,
-				22A8B5C420D7414B00A8CF6E /* ItunesAPIClient.swift */,
 				22A8B5C220D7360500A8CF6E /* ItunesError.swift */,
+				22A8B5C420D7414B00A8CF6E /* ItunesAPIClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
