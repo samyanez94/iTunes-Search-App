@@ -20,6 +20,7 @@
 		2272F0A620CDE1B300781228 /* AlbumCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2272F0A520CDE1B300781228 /* AlbumCellViewModel.swift */; };
 		22A8B5BA20D71FCD00A8CF6E /* ItunesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A8B5B920D71FCD00A8CF6E /* ItunesEntity.swift */; };
 		22A8B5BC20D724D400A8CF6E /* QueryItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A8B5BB20D724D400A8CF6E /* QueryItemProvider.swift */; };
+		22A8B5BE20D72C5400A8CF6E /* ItunesAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A8B5BD20D72C5400A8CF6E /* ItunesAttribute.swift */; };
 		22B7629A20BF9B6B00A8D84F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7629920BF9B6B00A8D84F /* AppDelegate.swift */; };
 		22B7629C20BF9B6B00A8D84F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7629B20BF9B6B00A8D84F /* ViewController.swift */; };
 		22B7629F20BF9B6B00A8D84F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B7629D20BF9B6B00A8D84F /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		2272F0A520CDE1B300781228 /* AlbumCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCellViewModel.swift; sourceTree = "<group>"; };
 		22A8B5B920D71FCD00A8CF6E /* ItunesEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesEntity.swift; sourceTree = "<group>"; };
 		22A8B5BB20D724D400A8CF6E /* QueryItemProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryItemProvider.swift; sourceTree = "<group>"; };
+		22A8B5BD20D72C5400A8CF6E /* ItunesAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesAttribute.swift; sourceTree = "<group>"; };
 		22B7629620BF9B6B00A8D84F /* iTunesClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B7629920BF9B6B00A8D84F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22B7629B20BF9B6B00A8D84F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				223F0CD620D5D17200279E11 /* Endpoint.swift */,
 				223F0CD420D5D11A00279E11 /* ItunesMedia.swift */,
 				22A8B5B920D71FCD00A8CF6E /* ItunesEntity.swift */,
+				22A8B5BD20D72C5400A8CF6E /* ItunesAttribute.swift */,
 				22A8B5BB20D724D400A8CF6E /* QueryItemProvider.swift */,
 			);
 			path = Endpoint;
@@ -259,6 +262,7 @@
 				2272F09F20CDDB6400781228 /* AlbumListController.swift in Sources */,
 				223F0CD020D5C68E00279E11 /* SongCell.swift in Sources */,
 				22B762B120BF9D0700A8D84F /* Genre.swift in Sources */,
+				22A8B5BE20D72C5400A8CF6E /* ItunesAttribute.swift in Sources */,
 				223F0CD720D5D17200279E11 /* Endpoint.swift in Sources */,
 				22B762B320BF9D7A00A8D84F /* Album.swift in Sources */,
 				22B762BC20BFBC3600A8D84F /* SearchResultsDataSource.swift in Sources */,
