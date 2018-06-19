@@ -10,11 +10,15 @@ import UIKit
 
 class AlbumDetailController: UITableViewController {
     
-    var album: Album!
+    var album: Album? {
+        didSet {
+            self.title = album?.name
+            dataSource.update(with: album!.songs)
+            tableView.reloadData()
+        }
+    }
     
-    lazy var dataSource: AlbumDetailDataSource = {
-        return AlbumDetailDataSource(songs: self.album!.songs)
-    }()
+    var dataSource = AlbumDetailDataSource(songs: [])
 
     @IBOutlet weak var artworkView: UIImageView!
     @IBOutlet weak var albumTitleLabel: UILabel!

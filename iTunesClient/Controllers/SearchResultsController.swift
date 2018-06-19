@@ -51,11 +51,9 @@ class SearchResultsController: UITableViewController {
 extension SearchResultsController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         
-        client.searchForArtist(withTerm: searchController.searchBar.text!) { [weak self] artist, error in
-            self?.dataSource.update(with: artist)
+        client.searchForArtist(withTerm: searchController.searchBar.text!) { [weak self] artists, error in
+            self?.dataSource.update(with: artists)
             self?.tableView.reloadData()
         }
     }
-    
-    
 }
