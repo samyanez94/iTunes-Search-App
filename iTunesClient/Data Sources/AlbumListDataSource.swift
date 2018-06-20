@@ -35,6 +35,10 @@ class AlbumListDataSource: NSObject, UITableViewDataSource {
         cell.configure(with: viewModel)
         cell.accessoryType = .disclosureIndicator
         
+        if album.artworkState == .placeholder {
+            
+        }
+        
         return cell
     }
     
@@ -47,5 +51,9 @@ class AlbumListDataSource: NSObject, UITableViewDataSource {
     func update(with albums: [Album]) {
         self.albums = albums
     }
+    
+//    func downloadArtwork(for album: Album) {
+//
+//    }
     
 }
