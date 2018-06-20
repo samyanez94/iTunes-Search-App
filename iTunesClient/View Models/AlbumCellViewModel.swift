@@ -7,17 +7,20 @@
 //
 
 import Foundation
+import UIKit
 
 struct AlbumCellViewModel {
     let title: String
     let releaseDate: String
     let genre: String
+    let artwork: UIImage
 }
 
 extension AlbumCellViewModel {
     init(album: Album) {
         self.title = album.censoredName
         self.genre = album.primaryGenre.name
+        self.artwork = album.artworkState == .downloaded ? album.artwork! : #imageLiteral(resourceName: "AlbumPlaceholder")
         
         let formatter = DateFormatter()
         formatter.locale = Locale.current

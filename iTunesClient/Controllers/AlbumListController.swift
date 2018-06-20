@@ -54,6 +54,7 @@ class AlbumListController: UITableViewController {
                 
                 client.lookupAlbum(withID: selectedAlbum.id) { album, error in
                     if let album = album {
+                        album.artwork = selectedAlbum.artwork
                         albumDetailController.album = album
                         albumDetailController.tableView.reloadData()
                     }

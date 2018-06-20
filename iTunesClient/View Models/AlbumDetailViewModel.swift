@@ -7,17 +7,21 @@
 //
 
 import Foundation
+import UIKit
 
 struct AlbumDetailViewModel {
     let title: String
     let releaseDate: String
     let genre: String
+    let artwork: UIImage
 }
 
 extension AlbumDetailViewModel {
     init(album: Album) {
         self.title = album.censoredName
         self.genre = album.primaryGenre.name
+        self.artwork = album.artwork!
+
         
         let formatter = DateFormatter()
         formatter.locale = Locale.current

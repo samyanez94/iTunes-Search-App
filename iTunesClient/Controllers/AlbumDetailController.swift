@@ -14,6 +14,7 @@ class AlbumDetailController: UITableViewController {
         didSet {
             self.title = album?.name
             dataSource.update(with: album!.songs)
+            configure(with: album!)
             tableView.reloadData()
         }
     }
@@ -37,8 +38,7 @@ class AlbumDetailController: UITableViewController {
     func configure(with album: Album) {
         let viewModel = AlbumDetailViewModel(album: album)
         
-        // Add implementation for artworkView
-        
+        artworkView.image = viewModel.artwork
         albumTitleLabel.text = viewModel.title
         albumGenreLabel.text = viewModel.genre
         albumReleaseDateLabel.text = viewModel.releaseDate
