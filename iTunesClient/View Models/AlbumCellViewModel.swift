@@ -19,7 +19,7 @@ struct AlbumCellViewModel {
 extension AlbumCellViewModel {
     init(album: Album) {
         self.title = album.censoredName
-        self.genre = album.primaryGenre.name
+        self.genre = album.primaryGenre.rawValue
         self.artwork = album.artworkState == .downloaded ? album.artwork! : #imageLiteral(resourceName: "AlbumPlaceholder")
         
         let formatter = DateFormatter()

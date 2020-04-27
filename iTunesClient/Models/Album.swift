@@ -15,66 +15,37 @@ enum AlbumArtworkState {
     case failed
 }
 
-class Album {
+public enum Explicitness: String, Decodable {
+    case explicit
+    case cleaned
+    case notExplicit
+}
+
+class Album: Decodable {
     let id: Int
+    let type: String
     let artistName: String
     let name: String
     let censoredName: String
-    let artworkUrl: String
-    let isExplicit: Bool
+    let artworkURL: String
+    let explicitness: Explicitness
     let numberOfTracks: Int
     let releaseDate: Date
     let primaryGenre: Genre
-    var songs = [Song]()
+    var songs: [Song] = []
     var artwork: UIImage?
     var artworkState = AlbumArtworkState.placeholder
     
-    init(id: Int, artistName: String, name: String, censoredName: String, artworkUrl: String, isExplicit: Bool, numberOfTracks: Int, releaseDate: Date, primaryGenre: Genre) {
-        self.id = id
-        self.artistName = artistName
-        self.name = name
-        self.censoredName = censoredName
-        self.artworkUrl = artworkUrl
-        self.isExplicit = isExplicit
-        self.numberOfTracks = numberOfTracks
-        self.releaseDate = releaseDate
-        self.primaryGenre = primaryGenre
-    }
-}
-
-extension Album {
-    convenience init?(json: [String: Any]) {
-        
-        struct Key {
-            static let id = "collectionId"
-            static let artistName = "artistName"
-            static let name = "collectionName"
-            static let censoredName = "collectionCensoredName"
-            static let artworkUrl = "artworkUrl100"
-            static let collectionExplicitness = "collectionExplicitness"
-            static let trackCount = "trackCount"
-            static let releaseDate = "releaseDate"
-            static let primaryGenre = "primaryGenreName"
-        }
-        
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
-        
-        guard let idValue = json[Key.id] as? Int,
-            let artistNameValue = json[Key.artistName] as? String,
-            let nameValue = json[Key.name] as? String,
-            let censoredNameValue = json[Key.censoredName] as? String,
-            let artworkUrlString = json[Key.artworkUrl] as? String,
-            let isExplicitValue = json[Key.collectionExplicitness] as? String,
-            let numberOfTracksValue = json[Key.trackCount] as? Int,
-            let releaseDateString = json[Key.releaseDate] as? String,
-            let releaseDateValue = formatter.date(from: releaseDateString),
-            let primaryGenreString = json[Key.primaryGenre] as? String,
-            let primaryGenreValue = Genre(name: primaryGenreString) else { return nil }
-        
-        let isExplicit = isExplicitValue == "notExplicit" ? false : true
-        
-        self.init(id: idValue, artistName: artistNameValue, name: nameValue, censoredName: censoredNameValue, artworkUrl: artworkUrlString, isExplicit: isExplicit, numberOfTracks: numberOfTracksValue, releaseDate: releaseDateValue, primaryGenre: primaryGenreValue)
+    private enum CodingKeys: String, CodingKey {
+        case id = "collectionId"
+        case type = "collectionType"
+        case artistName = "artistName"
+        case name = "collectionName"
+        case censoredName = "collectionCensoredName"
+        case artworkURL = "artworkUrl100"
+        case explicitness = "collectionExplicitness"
+        case numberOfTracks = "trackCount"
+        case releaseDate
+        case primaryGenre = "primaryGenreName"
     }
 }

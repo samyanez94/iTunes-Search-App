@@ -15,7 +15,7 @@ protocol Endpoint {
 }
 
 extension Endpoint {
-    var urlComponents: URLComponents {
+    var components: URLComponents {
         var components = URLComponents(string: base)!
         components.path = path
         components.queryItems = queryItems
@@ -24,14 +24,14 @@ extension Endpoint {
     }
     
     var request: URLRequest {
-        let url = urlComponents.url!
+        let url = components.url!
         return URLRequest(url: url)
     }
 }
 
 enum Itunes {
-    case search(term: String, mediaType: ItunesMedia?)
-    case lookup(id: Int, entity: ItunesEntity?)
+    case search(term: String, mediaType: ItunesMedia? = nil)
+    case lookup(id: Int, entity: ItunesEntity? = nil)
 }
 
 extension Itunes: Endpoint {

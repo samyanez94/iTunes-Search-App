@@ -19,7 +19,7 @@ struct AlbumDetailViewModel {
 extension AlbumDetailViewModel {
     init(album: Album) {
         self.title = album.censoredName
-        self.genre = album.primaryGenre.name
+        self.genre = album.primaryGenre.rawValue
         self.artwork = album.artwork!
 
         

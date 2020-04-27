@@ -22,7 +22,7 @@ class ArtworkDownloader: Operation {
             return
         }
         
-        guard let url = URL(string: album.artworkUrl) else {
+        guard let url = URL(string: album.artworkURL) else {
             return
         }
         

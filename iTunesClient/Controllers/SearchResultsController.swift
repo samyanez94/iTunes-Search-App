@@ -12,7 +12,7 @@ class SearchResultsController: UITableViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     let dataSource = SearchResultsDataSource()
-    let client = ItunesAPIClient()
+    let client = ItunesClient()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +39,10 @@ class SearchResultsController: UITableViewController {
                 let artist = dataSource.artist(at: indexPath)
                 let albumListController = segue.destination as! AlbumListController
                 
-                client.lookupArtist(withID: artist.id) { artist, error in
-                    albumListController.artist = artist
-                    albumListController.tableView.reloadData()
+                client.lookupArtist(withID: artist.id) { result in
+                    if let artist = try? result.get() {
+                        albumListController.artist = artist
+                    }
                 }
             }
         }
@@ -50,10 +51,11 @@ class SearchResultsController: UITableViewController {
 
 extension SearchResultsController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        
-        client.searchForArtist(withTerm: searchController.searchBar.text!) { [weak self] artists, error in
-            self?.dataSource.update(with: artists)
-            self?.tableView.reloadData()
+        client.searchForArtist(withTerm: searchController.searchBar.text!) { [weak self] result in
+            if let artists = try? result.get() {
+                self?.dataSource.update(with: artists)
+                self?.tableView.reloadData()
+            }
         }
     }
 }
