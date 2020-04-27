@@ -10,20 +10,18 @@ import UIKit
 
 class SongCell: UITableViewCell {
     
+    /// Reuse identifier
     static let reuseIdentifier = "SongCell"
 
+    /// Title label
     @IBOutlet weak var songTitleLabel: UILabel!
+    
+    /// Runtime label
     @IBOutlet weak var songRuntimeLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configure(with viewModel: SongViewModel) {
+        songTitleLabel.text = viewModel.title
+        songRuntimeLabel.text = viewModel.runtime
     }
 
 }

@@ -9,19 +9,23 @@
 import Foundation
 
 struct SongViewModel {
+    /// Title
     let title: String
+    
+    /// Runtime
     let runtime: String
 }
 
 extension SongViewModel {
     init(song: Song) {
         self.title = song.censoredName
-        
-        // Track time in milliseconds
-        let timeInSeconds = song.trackTime / 1000
-        let minutes = timeInSeconds / 60 % 60
-        let seconds = timeInSeconds % 60
-        
-        self.runtime = "\(minutes): \(seconds)"
+        self.runtime = SongViewModel.runtime(from: song.trackTime)
+    }
+    
+    private static func runtime(from trackTime: Int) -> String {
+        let timeInSeconds = trackTime / 1000
+        let minutes = Int(timeInSeconds) / 60 % 60
+        let seconds = Int(timeInSeconds) % 60
+        return String(format: "%02i:%02i", minutes, seconds)
     }
 }

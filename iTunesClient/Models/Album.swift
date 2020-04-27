@@ -33,8 +33,6 @@ class Album: Decodable {
     let releaseDate: Date
     let primaryGenre: Genre
     var songs: [Song] = []
-    var artwork: UIImage?
-    var artworkState = AlbumArtworkState.placeholder
     
     private enum CodingKeys: String, CodingKey {
         case id = "collectionId"

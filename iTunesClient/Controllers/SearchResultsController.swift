@@ -10,8 +10,13 @@ import UIKit
 
 class SearchResultsController: UITableViewController {
     
+    /// Search controller
     let searchController = UISearchController(searchResultsController: nil)
+    
+    /// Data source
     let dataSource = SearchResultsDataSource()
+    
+    /// API client
     let client = ItunesClient()
 
     override func viewDidLoad() {
@@ -19,40 +24,36 @@ class SearchResultsController: UITableViewController {
 
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(SearchResultsController.dismissSearchResultController))
         
+        tableView.dataSource = dataSource
         tableView.tableHeaderView = searchController.searchBar
-        searchController.dimsBackgroundDuringPresentation = false
+
+        searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchResultsUpdater = self
         
-        tableView.dataSource = dataSource
         definesPresentationContext = true
     }
     
     @objc func dismissSearchResultController() {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Navigation
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowAlbums" {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                let artist = dataSource.artist(at: indexPath)
-                let albumListController = segue.destination as! AlbumListController
-                
-                client.lookupArtist(withID: artist.id) { result in
-                    if let artist = try? result.get() {
-                        albumListController.artist = artist
-                    }
-                }
-            }
-        }
+    @IBSegueAction
+    func makeAlbumListController(coder: NSCoder) -> AlbumListController? {
+        guard let indexPath = tableView.indexPathForSelectedRow else { return  nil }
+        let artist = dataSource.artist(at: indexPath)
+        return AlbumListController(coder: coder, artist: artist)
     }
 }
 
+// MARK: - UISearchResultsUpdating
+
 extension SearchResultsController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        client.searchForArtist(withTerm: searchController.searchBar.text!) { [weak self] result in
-            if let artists = try? result.get() {
+        guard let term = searchController.searchBar.text else { return }
+        client.searchForArtist(withTerm: term) { [weak self] result in
+            if case let .success(artists) = result {
                 self?.dataSource.update(with: artists)
                 self?.tableView.reloadData()
             }

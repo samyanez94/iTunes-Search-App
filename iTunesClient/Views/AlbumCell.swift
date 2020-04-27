@@ -7,33 +7,32 @@
 //
 
 import UIKit
+import SDWebImage
 
 class AlbumCell: UITableViewCell {
     
+    /// Reuse identifier
     static let reuseIdentifier = "AlbumCell"
     
-    @IBOutlet weak var artworkView: UIImageView!
-    @IBOutlet weak var albumTitleLabel: UILabel!
-    @IBOutlet weak var genreLabel: UILabel!
-    @IBOutlet weak var releaseDateLabel: UILabel!
+    /// Cell height
+    static let height: CGFloat = 80
     
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    /// Artwork view
+    @IBOutlet weak var artworkView: UIImageView!
+    
+    /// Album title label
+    @IBOutlet weak var albumTitleLabel: UILabel!
+    
+    /// Genre label
+    @IBOutlet weak var genreLabel: UILabel!
+    
+    /// Release date
+    @IBOutlet weak var releaseDateLabel: UILabel!
     
     func configure(with viewModel: AlbumCellViewModel) {
         albumTitleLabel.text = viewModel.title
         genreLabel.text = viewModel.genre
         releaseDateLabel.text = viewModel.releaseDate
-        artworkView.image = viewModel.artwork
+        artworkView.sd_setImage(with: URL(string: viewModel.artworkURL), completed: nil)
     }
-
 }

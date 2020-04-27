@@ -10,36 +10,29 @@ import UIKit
 
 class SearchResultsDataSource: NSObject, UITableViewDataSource {
     
-    private var data = [Artist]()
-
-    override init() {
-        super.init()
-    }
-    
-    func update(with artists: [Artist]) {
-        data = artists
-    }
+    /// Artists
+    private var artists = [Artist]()
     
     // MARK: - Data Source
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return artists.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath)
-        let artist = data[indexPath.row]
+        let artist = artists[indexPath.row]
         cell.textLabel?.text = artist.name
         return cell
     }
     
     // MARK: - Helper Methods
     
+    func update(with artists: [Artist]) {
+        self.artists = artists
+    }
+    
     func artist(at indexPath: IndexPath) -> Artist {
-        return data[indexPath.row]
+        return artists[indexPath.row]
     }
 }

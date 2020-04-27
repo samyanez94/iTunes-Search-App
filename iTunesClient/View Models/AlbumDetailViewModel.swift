@@ -10,24 +10,33 @@ import Foundation
 import UIKit
 
 struct AlbumDetailViewModel {
+    /// Title
     let title: String
+    
+    /// Release date
     let releaseDate: String
+    
+    /// Genre
     let genre: String
-    let artwork: UIImage
+    
+    /// Artwork URL
+    let artworkURL: String
 }
 
 extension AlbumDetailViewModel {
+    
+    /// Date formatter
+    static private var formatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.locale = Locale.current
+        formatter.dateFormat = "MMM dd, yyyy"
+        return formatter
+    }
+    
     init(album: Album) {
         self.title = album.censoredName
         self.genre = album.primaryGenre.rawValue
-        self.artwork = album.artwork!
-
-        
-        let formatter = DateFormatter()
-        formatter.locale = Locale.current
-        
-        formatter.dateFormat = "MMM dd, yyyy"
-        
-        self.releaseDate = formatter.string(from: album.releaseDate)
+        self.releaseDate = AlbumDetailViewModel.formatter.string(from: album.releaseDate)
+        self.artworkURL = album.artworkURL
     }
 }
