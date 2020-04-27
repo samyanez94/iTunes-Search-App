@@ -29,7 +29,7 @@ class AlbumDetailController: UITableViewController {
     /// Album
     var album: Album {
         didSet {
-            dataSource.update(with: album.songs)
+            dataSource.update(with: album.tracks)
             configure(with: album)
             tableView.reloadData()
         }

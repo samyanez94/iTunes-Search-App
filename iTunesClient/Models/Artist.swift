@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Artist: Decodable {
+class Artist {
     /// Identifier
     let id: Int
     
@@ -21,24 +21,19 @@ class Artist: Decodable {
     /// Albums
     var albums = [Album]()
     
-    private enum CodingKeys: String, CodingKey {
-        case id = "artistId"
-        case type = "artistType"
-        case name = "artistName"
+    init(id: Int, type: String, name: String, albums: [Album] = [Album]()) {
+        self.id = id
+        self.type = type
+        self.name = name
+        self.albums = albums
     }
 }
 
 extension Artist {
-    struct Response: Decodable {
-        /// Count
-        var count: Int
-        
-        /// Artists
-        var artists: [Artist]
-        
-        private enum CodingKeys: String, CodingKey {
-            case count = "resultCount"
-            case artists = "results"
-        }
+    convenience init?(from searchResult: SearchResult) {
+        guard let id = searchResult.artistID,
+            let type = searchResult.artistType,
+            let name = searchResult.artistName else { return nil }
+        self.init(id: id, type: type, name: name)
     }
 }

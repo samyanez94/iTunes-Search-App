@@ -29,7 +29,7 @@ enum Genre: String, Decodable {
     case dance = "Dance"
     case hipHopRap = "Hip-Hop/Rap"
     case hipHop = "Hip-Hop"
-    case hourse = "House"
+    case house = "House"
     case world = "World"
     case alternative = "Alternative"
     case rock = "Rock"
@@ -51,4 +51,52 @@ enum Genre: String, Decodable {
     case frenchPop = "French Pop"
     case germanPop = "German Pop"
     case germanFolk = "German Folk"
+}
+
+extension Genre {
+    init?(name: String) {
+        switch name {
+        case "Blues": self = .blues
+        case "Comedy": self = .comedy
+        case "Children's Music": self = .childrensMusic
+        case "Classical": self = .classical
+        case "Country": self = .country
+        case "Electronic": self = .electronic
+        case "Holiday": self = .holiday
+        case "Opera": self = .opera
+        case "Singer/Songwriter": self = .singerSongwriter
+        case "Jazz": self = .jazz
+        case "Latino": self = .latino
+        case "New Age": self = .newAge
+        case "Pop": self = .pop
+        case "R&B/Soul": self = .rythmAndBluesSoul
+        case "Soundtrack": self = .soundtrack
+        case "Dance": self = .dance
+        case "Hip-Hop/Rap": self = .hipHopRap
+        case "Hip-Hop": self = .hipHop
+        case "House": self = .house
+        case "World": self = .world
+        case "Alternative": self = .alternative
+        case "Rock": self = .rock
+        case "Christian & Gospel": self = .christianGospel
+        case "Vocal": self = .vocal
+        case "Reggae": self = .reggae
+        case "Easy Listening": self = .easyListening
+        case "J-Pop": self = .jPop
+        case "Enka": self = .enka
+        case "Anime": self = .anime
+        case "Kayokyoku": self = .kayokyoku
+        case "Fitness & Workout": self = .fitnessWorkout
+        case "K-Pop": self = .kPop
+        case "Karaoke": self = .karaoke
+        case "Instrumental": self = .instrumental
+        case "Brazilian": self = .brazilian
+        case "Spoken Word": self = .spokenWord
+        case "Disney": self = .disney
+        case "French Pop": self = .frenchPop
+        case "German Pop": self = .germanPop
+        case "German Folk": self = .germanFolk
+        default: return nil
+        }
+    }
 }

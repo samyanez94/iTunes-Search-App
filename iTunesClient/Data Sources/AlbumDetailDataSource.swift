@@ -11,21 +11,21 @@ import UIKit
 
 class AlbumDetailDataSource: NSObject, UITableViewDataSource {
     
-    /// Songs
-    private var songs = [Song]()
+    /// Tracks
+    private var tracks = [Track]()
     
     // MARK - Data source
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return songs.count
+        return tracks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SongCell.reuseIdentifier, for: indexPath) as? SongCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TrackCell.reuseIdentifier, for: indexPath) as? TrackCell else {
             fatalError("Unable to dequeue cell from identifier")
         }
-        let song = songs[indexPath.row]
-        let viewModel = SongViewModel(song: song)
+        let track = tracks[indexPath.row]
+        let viewModel = TrackViewModel(track: track)
         cell.configure(with: viewModel)
         return cell
     }
@@ -36,11 +36,11 @@ class AlbumDetailDataSource: NSObject, UITableViewDataSource {
     
     // MARK - Helper
     
-    func song(at indexPath: IndexPath) -> Song {
-        return songs[indexPath.row]
+    func track(at indexPath: IndexPath) -> Track {
+        return tracks[indexPath.row]
     }
     
-    func update(with songs: [Song]) {
-        self.songs = songs
+    func update(with tracks: [Track]) {
+        self.tracks = tracks
     }
 }

@@ -1,5 +1,5 @@
 //
-//  SongViewModel.swift
+//  TrackViewModel.swift
 //  iTunesClient
 //
 //  Created by Samuel Yanez on 6/16/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SongViewModel {
+struct TrackViewModel {
     /// Title
     let title: String
     
@@ -16,10 +16,10 @@ struct SongViewModel {
     let runtime: String
 }
 
-extension SongViewModel {
-    init(song: Song) {
-        self.title = song.censoredName
-        self.runtime = SongViewModel.runtime(from: song.trackTime)
+extension TrackViewModel {
+    init(track: Track) {
+        self.title = track.censoredName
+        self.runtime = TrackViewModel.runtime(from: track.time)
     }
     
     private static func runtime(from trackTime: Int) -> String {

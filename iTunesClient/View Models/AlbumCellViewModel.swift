@@ -27,7 +27,7 @@ extension AlbumCellViewModel {
     
     init(album: Album) {
         self.title = album.censoredName
-        self.genre = album.primaryGenre.rawValue
+        self.genre = album.genre.rawValue
         self.releaseDate = DateFormatter(format: "MMM dd, yyyy").string(from: album.releaseDate)
         self.artworkURL = album.artworkURL(size: 400)
     }

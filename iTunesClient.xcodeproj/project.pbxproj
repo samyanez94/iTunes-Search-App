@@ -10,8 +10,8 @@
 		223F0CCA20D5BDDC00279E11 /* AlbumDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223F0CC920D5BDDC00279E11 /* AlbumDetailController.swift */; };
 		223F0CCC20D5BFC400279E11 /* AlbumDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223F0CCB20D5BFC400279E11 /* AlbumDetailViewModel.swift */; };
 		223F0CCE20D5C5B400279E11 /* AlbumDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223F0CCD20D5C5B400279E11 /* AlbumDetailDataSource.swift */; };
-		223F0CD020D5C68E00279E11 /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223F0CCF20D5C68E00279E11 /* SongCell.swift */; };
-		223F0CD220D5C7E200279E11 /* SongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223F0CD120D5C7E200279E11 /* SongViewModel.swift */; };
+		223F0CD020D5C68E00279E11 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223F0CCF20D5C68E00279E11 /* TrackCell.swift */; };
+		223F0CD220D5C7E200279E11 /* TrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223F0CD120D5C7E200279E11 /* TrackViewModel.swift */; };
 		223F0CD520D5D11A00279E11 /* ItunesMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223F0CD420D5D11A00279E11 /* ItunesMedia.swift */; };
 		223F0CD720D5D17200279E11 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223F0CD620D5D17200279E11 /* Endpoint.swift */; };
 		2272F09F20CDDB6400781228 /* AlbumListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2272F09E20CDDB6400781228 /* AlbumListController.swift */; };
@@ -24,8 +24,9 @@
 		22A8B5C520D7414B00A8CF6E /* ItunesAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A8B5C420D7414B00A8CF6E /* ItunesAPIClient.swift */; };
 		22B074E824564CD800F74F0B /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B074E724564CD800F74F0B /* APIClient.swift */; };
 		22B074EA24564D2F00F74F0B /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B074E924564D2F00F74F0B /* APIError.swift */; };
-		22B074EE24565E7200F74F0B /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B074ED24565E7200F74F0B /* Wrapper.swift */; };
 		22B074F1245753BE00F74F0B /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B074F0245753BE00F74F0B /* DateFormatter+Extensions.swift */; };
+		22B074F7245782BE00F74F0B /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B074F6245782BE00F74F0B /* SearchResult.swift */; };
+		22B074F92457972200F74F0B /* Explicitness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B074F82457972200F74F0B /* Explicitness.swift */; };
 		22B7629A20BF9B6B00A8D84F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7629920BF9B6B00A8D84F /* AppDelegate.swift */; };
 		22B7629F20BF9B6B00A8D84F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B7629D20BF9B6B00A8D84F /* Main.storyboard */; };
 		22B762A120BF9B6D00A8D84F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B762A020BF9B6D00A8D84F /* Assets.xcassets */; };
@@ -33,7 +34,7 @@
 		22B762AF20BF9BDC00A8D84F /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B762AE20BF9BDC00A8D84F /* Artist.swift */; };
 		22B762B120BF9D0700A8D84F /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B762B020BF9D0700A8D84F /* Genre.swift */; };
 		22B762B320BF9D7A00A8D84F /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B762B220BF9D7A00A8D84F /* Album.swift */; };
-		22B762B520BFA05B00A8D84F /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B762B420BFA05B00A8D84F /* Song.swift */; };
+		22B762B520BFA05B00A8D84F /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B762B420BFA05B00A8D84F /* Track.swift */; };
 		22B762B920BFB6FA00A8D84F /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B762B820BFB6FA00A8D84F /* SearchResultsController.swift */; };
 		22B762BC20BFBC3600A8D84F /* SearchResultsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B762BB20BFBC3600A8D84F /* SearchResultsDataSource.swift */; };
 		CA4888FEBD01D9622CAF026F /* Pods_iTunesClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1199D602E1751979A21F3C2 /* Pods_iTunesClient.framework */; };
@@ -43,8 +44,8 @@
 		223F0CC920D5BDDC00279E11 /* AlbumDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailController.swift; sourceTree = "<group>"; };
 		223F0CCB20D5BFC400279E11 /* AlbumDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewModel.swift; sourceTree = "<group>"; };
 		223F0CCD20D5C5B400279E11 /* AlbumDetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailDataSource.swift; sourceTree = "<group>"; };
-		223F0CCF20D5C68E00279E11 /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
-		223F0CD120D5C7E200279E11 /* SongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewModel.swift; sourceTree = "<group>"; };
+		223F0CCF20D5C68E00279E11 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		223F0CD120D5C7E200279E11 /* TrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewModel.swift; sourceTree = "<group>"; };
 		223F0CD420D5D11A00279E11 /* ItunesMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesMedia.swift; sourceTree = "<group>"; };
 		223F0CD620D5D17200279E11 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		2272F09E20CDDB6400781228 /* AlbumListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListController.swift; sourceTree = "<group>"; };
@@ -57,8 +58,9 @@
 		22A8B5C420D7414B00A8CF6E /* ItunesAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesAPIClient.swift; sourceTree = "<group>"; };
 		22B074E724564CD800F74F0B /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		22B074E924564D2F00F74F0B /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		22B074ED24565E7200F74F0B /* Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
 		22B074F0245753BE00F74F0B /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		22B074F6245782BE00F74F0B /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		22B074F82457972200F74F0B /* Explicitness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explicitness.swift; sourceTree = "<group>"; };
 		22B7629620BF9B6B00A8D84F /* iTunesClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B7629920BF9B6B00A8D84F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22B7629E20BF9B6B00A8D84F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -68,7 +70,7 @@
 		22B762AE20BF9BDC00A8D84F /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		22B762B020BF9D0700A8D84F /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		22B762B220BF9D7A00A8D84F /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
-		22B762B420BFA05B00A8D84F /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		22B762B420BFA05B00A8D84F /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		22B762B820BFB6FA00A8D84F /* SearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 		22B762BB20BFBC3600A8D84F /* SearchResultsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsDataSource.swift; sourceTree = "<group>"; };
 		B0B04D8597A5ADADC77CDF49 /* Pods-iTunesClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesClient.debug.xcconfig"; path = "Target Support Files/Pods-iTunesClient/Pods-iTunesClient.debug.xcconfig"; sourceTree = "<group>"; };
@@ -105,7 +107,7 @@
 			children = (
 				2272F0A520CDE1B300781228 /* AlbumCellViewModel.swift */,
 				223F0CCB20D5BFC400279E11 /* AlbumDetailViewModel.swift */,
-				223F0CD120D5C7E200279E11 /* SongViewModel.swift */,
+				223F0CD120D5C7E200279E11 /* TrackViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -170,10 +172,11 @@
 			children = (
 				223F0CD320D5D0F600279E11 /* Endpoint */,
 				22B762AE20BF9BDC00A8D84F /* Artist.swift */,
-				22B762B020BF9D0700A8D84F /* Genre.swift */,
 				22B762B220BF9D7A00A8D84F /* Album.swift */,
-				22B762B420BFA05B00A8D84F /* Song.swift */,
-				22B074ED24565E7200F74F0B /* Wrapper.swift */,
+				22B762B420BFA05B00A8D84F /* Track.swift */,
+				22B762B020BF9D0700A8D84F /* Genre.swift */,
+				22B074F82457972200F74F0B /* Explicitness.swift */,
+				22B074F6245782BE00F74F0B /* SearchResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,7 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				2272F0A020CDDC1100781228 /* AlbumCell.swift */,
-				223F0CCF20D5C68E00279E11 /* SongCell.swift */,
+				223F0CCF20D5C68E00279E11 /* TrackCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -340,23 +343,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22B074EE24565E7200F74F0B /* Wrapper.swift in Sources */,
-				22B762B520BFA05B00A8D84F /* Song.swift in Sources */,
+				22B762B520BFA05B00A8D84F /* Track.swift in Sources */,
 				22B762AF20BF9BDC00A8D84F /* Artist.swift in Sources */,
 				22A8B5BA20D71FCD00A8CF6E /* ItunesEntity.swift in Sources */,
+				22B074F92457972200F74F0B /* Explicitness.swift in Sources */,
 				2272F0A620CDE1B300781228 /* AlbumCellViewModel.swift in Sources */,
 				22B7629A20BF9B6B00A8D84F /* AppDelegate.swift in Sources */,
 				223F0CCE20D5C5B400279E11 /* AlbumDetailDataSource.swift in Sources */,
 				2272F0A320CDDE5700781228 /* AlbumListDataSource.swift in Sources */,
 				22A8B5BC20D724D400A8CF6E /* QueryItemProvider.swift in Sources */,
 				223F0CD520D5D11A00279E11 /* ItunesMedia.swift in Sources */,
-				223F0CD220D5C7E200279E11 /* SongViewModel.swift in Sources */,
+				22B074F7245782BE00F74F0B /* SearchResult.swift in Sources */,
+				223F0CD220D5C7E200279E11 /* TrackViewModel.swift in Sources */,
 				22B074E824564CD800F74F0B /* APIClient.swift in Sources */,
 				223F0CCA20D5BDDC00279E11 /* AlbumDetailController.swift in Sources */,
 				22B762B920BFB6FA00A8D84F /* SearchResultsController.swift in Sources */,
 				22A8B5C520D7414B00A8CF6E /* ItunesAPIClient.swift in Sources */,
 				2272F09F20CDDB6400781228 /* AlbumListController.swift in Sources */,
-				223F0CD020D5C68E00279E11 /* SongCell.swift in Sources */,
+				223F0CD020D5C68E00279E11 /* TrackCell.swift in Sources */,
 				22B762B120BF9D0700A8D84F /* Genre.swift in Sources */,
 				22A8B5BE20D72C5400A8CF6E /* ItunesAttribute.swift in Sources */,
 				223F0CD720D5D17200279E11 /* Endpoint.swift in Sources */,
