@@ -33,6 +33,6 @@ class AlbumCell: UITableViewCell {
         albumTitleLabel.text = viewModel.title
         genreLabel.text = viewModel.genre
         releaseDateLabel.text = viewModel.releaseDate
-        artworkView.sd_setImage(with: URL(string: viewModel.artworkURL), completed: nil)
+        artworkView.sd_setImage(with: viewModel.artworkURL, completed: nil)
     }
 }

@@ -31,11 +31,7 @@ class AlbumDetailDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "Tracks"
-        } else {
-            return nil
-        }
+        return section == 0 ? "Tracks" : nil
     }
     
     // MARK - Helper

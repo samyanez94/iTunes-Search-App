@@ -10,6 +10,18 @@ import UIKit
 
 class AlbumDetailController: UITableViewController {
     
+    /// Artwork view
+    @IBOutlet weak var artworkView: UIImageView!
+    
+    /// Album title
+    @IBOutlet weak var albumTitleLabel: UILabel!
+    
+    /// Album genre
+    @IBOutlet weak var albumGenreLabel: UILabel!
+    
+    /// Album release date
+    @IBOutlet weak var albumReleaseDateLabel: UILabel!
+    
     /// Album
     var album: Album {
         didSet {
@@ -23,12 +35,7 @@ class AlbumDetailController: UITableViewController {
     var dataSource = AlbumDetailDataSource()
     
     /// API client
-     let client = ItunesClient()
-
-    @IBOutlet weak var artworkView: UIImageView!
-    @IBOutlet weak var albumTitleLabel: UILabel!
-    @IBOutlet weak var albumGenreLabel: UILabel!
-    @IBOutlet weak var albumReleaseDateLabel: UILabel!
+    let client = ItunesClient()
     
     init?(coder: NSCoder, album: Album) {
          self.album = album
@@ -43,7 +50,6 @@ class AlbumDetailController: UITableViewController {
         super.viewDidLoad()
         title = album.name
         tableView.dataSource = dataSource
-        
         configure(with: album)
     }
     
@@ -62,6 +68,6 @@ class AlbumDetailController: UITableViewController {
         albumTitleLabel.text = viewModel.title
         albumGenreLabel.text = viewModel.genre
         albumReleaseDateLabel.text = viewModel.releaseDate
-        artworkView.sd_setImage(with: URL(string: viewModel.artworkURL))
+        artworkView.sd_setImage(with: viewModel.artworkURL)
     }
 }

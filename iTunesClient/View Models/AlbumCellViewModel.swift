@@ -20,7 +20,7 @@ struct AlbumCellViewModel {
     let genre: String
     
     /// Artwork URL
-    let artworkURL: String
+    let artworkURL: URL?
 }
 
 extension AlbumCellViewModel {
@@ -37,6 +37,6 @@ extension AlbumCellViewModel {
         self.title = album.censoredName
         self.genre = album.primaryGenre.rawValue
         self.releaseDate = AlbumCellViewModel.formatter.string(from: album.releaseDate)
-        self.artworkURL = album.artworkURL
+        self.artworkURL = album.artworkURL(size: 400)
     }
 }
