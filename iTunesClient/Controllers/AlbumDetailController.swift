@@ -11,7 +11,11 @@ import UIKit
 class AlbumDetailController: UITableViewController {
     
     /// Artwork view
-    @IBOutlet weak var artworkView: UIImageView!
+    @IBOutlet weak var artworkView: UIImageView! {
+        didSet {
+            artworkView.sd_imageTransition = .fade
+        }
+    }
     
     /// Album title
     @IBOutlet weak var albumTitleLabel: UILabel!

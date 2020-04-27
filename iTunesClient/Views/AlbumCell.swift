@@ -18,7 +18,11 @@ class AlbumCell: UITableViewCell {
     static let height: CGFloat = 80
     
     /// Artwork view
-    @IBOutlet weak var artworkView: UIImageView!
+    @IBOutlet weak var artworkView: UIImageView! {
+        didSet {
+            artworkView.sd_imageTransition = .fade
+        }
+    }
     
     /// Album title label
     @IBOutlet weak var albumTitleLabel: UILabel!
@@ -28,6 +32,11 @@ class AlbumCell: UITableViewCell {
     
     /// Release date
     @IBOutlet weak var releaseDateLabel: UILabel!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        artworkView.sd_cancelCurrentImageLoad()
+    }
     
     func configure(with viewModel: AlbumCellViewModel) {
         albumTitleLabel.text = viewModel.title

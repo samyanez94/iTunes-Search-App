@@ -25,18 +25,10 @@ struct AlbumCellViewModel {
 
 extension AlbumCellViewModel {
     
-    /// Date formatter
-    private static var formatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.locale = Locale.current
-        formatter.dateFormat = "MMM dd, yyyy"
-        return formatter
-    }
-    
     init(album: Album) {
         self.title = album.censoredName
         self.genre = album.primaryGenre.rawValue
-        self.releaseDate = AlbumCellViewModel.formatter.string(from: album.releaseDate)
+        self.releaseDate = DateFormatter(format: "MMM dd, yyyy").string(from: album.releaseDate)
         self.artworkURL = album.artworkURL(size: 400)
     }
 }

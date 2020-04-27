@@ -1,5 +1,5 @@
 //
-//  Either.swift
+//  Wrapper.swift
 //  iTunesClient
 //
 //  Created by Samuel Yanez on 4/26/20.
@@ -8,12 +8,13 @@
 
 import Foundation
 
-enum Either<T, U>: Decodable where T: Decodable, U: Decodable {
+enum Wrapper<T, U>: Decodable where T: Decodable, U: Decodable {
     case left(T)
     case right(U)
+    case none
 }
 
-extension Either {
+extension Wrapper {
     init(from decoder: Decoder) throws {
         if let value = try? T(from: decoder) {
             self = .left(value)
@@ -21,16 +22,15 @@ extension Either {
         else if let value = try? U(from: decoder) {
             self = .right(value)
         } else {
-            let context = DecodingError.Context(codingPath: decoder.codingPath, debugDescription:"Cannot decode \(T.self) or \(U.self)")
-            throw DecodingError.dataCorrupted(context)
+            self = .none
         }
     }
 }
 
-extension Either {
+extension Wrapper {
     struct Response: Decodable {
         var count: Int
-        var results: [Either]
+        var results: [Wrapper]
         
         private enum CodingKeys: String, CodingKey {
             case count = "resultCount"

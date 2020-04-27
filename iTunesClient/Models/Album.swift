@@ -27,7 +27,7 @@ class Album: Decodable {
     let artistName: String
     let name: String
     let censoredName: String
-    private let artworkURL: URL?
+    private let artworkURL100: URL?
     let explicitness: Explicitness
     let numberOfTracks: Int
     let releaseDate: Date
@@ -40,7 +40,7 @@ class Album: Decodable {
         case artistName = "artistName"
         case name = "collectionName"
         case censoredName = "collectionCensoredName"
-        case artworkURL = "artworkUrl100"
+        case artworkURL100 = "artworkUrl100"
         case explicitness = "collectionExplicitness"
         case numberOfTracks = "trackCount"
         case releaseDate
@@ -48,9 +48,11 @@ class Album: Decodable {
     }
     
     func artworkURL(size dimension: Int = 100) -> URL? {
-        guard dimension > 0, dimension != 100, var url = artworkURL else { return artworkURL }
+        guard dimension > 0, dimension != 100, var url = self.artworkURL100 else { return self.artworkURL100 }
+        
         url.deleteLastPathComponent()
         url.appendPathComponent("\(dimension)x\(dimension)bb.jpg")
+        
         return url
     }
 }

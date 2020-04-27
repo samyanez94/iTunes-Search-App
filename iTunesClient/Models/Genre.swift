@@ -28,6 +28,8 @@ enum Genre: String, Decodable {
     case soundtrack = "Soundtrack"
     case dance = "Dance"
     case hipHopRap = "Hip-Hop/Rap"
+    case hipHop = "Hip-Hop"
+    case hourse = "House"
     case world = "World"
     case alternative = "Alternative"
     case rock = "Rock"
