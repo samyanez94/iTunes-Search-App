@@ -53,7 +53,7 @@ class AlbumListController: UITableViewController {
                 let albumDetailController = segue.destination as! AlbumDetailController
                 
                 client.lookupAlbum(withID: selectedAlbum.id) { result in
-                    if var album = try? result.get() {
+                    if let album = try? result.get() {
                         album.artwork = selectedAlbum.artwork
                         albumDetailController.album = album
                         albumDetailController.tableView.reloadData()
