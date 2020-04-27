@@ -44,6 +44,7 @@ class AlbumListController: UITableViewController {
         
         client.lookupArtist(withID: artist.id) { result in
             if case let .success(artist) = result {
+                artist.albums.sort { $0.releaseDate > $1.releaseDate }
                 self.artist = artist
             }
         }

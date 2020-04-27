@@ -11,7 +11,7 @@ import Foundation
 enum Wrapper<T, U>: Decodable where T: Decodable, U: Decodable {
     case left(T)
     case right(U)
-    case none
+    case other
 }
 
 extension Wrapper {
@@ -22,7 +22,7 @@ extension Wrapper {
         else if let value = try? U(from: decoder) {
             self = .right(value)
         } else {
-            self = .none
+            self = .other
         }
     }
 }
