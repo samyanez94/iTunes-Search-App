@@ -22,17 +22,38 @@ public enum Explicitness: String, Decodable {
 }
 
 class Album: Decodable {
+    /// Identifier
     let id: Int
+    
+    /// Type
     let type: String
+    
+    /// Artist name
     let artistName: String
+    
+    /// Name
     let name: String
+    
+    /// Censored name
     let censoredName: String
+    
+    /// Artwork URL
     private let artworkURL100: URL?
+    
+    /// Explicitness
     let explicitness: Explicitness
+    
+    /// Number of tracks
     let numberOfTracks: Int
+    
+    /// Release date
     let releaseDate: Date
+    
+    /// Primary genre
     let primaryGenre: Genre
-    var songs: [Song] = []
+    
+    /// Songs
+    var songs = [Song]()
     
     private enum CodingKeys: String, CodingKey {
         case id = "collectionId"

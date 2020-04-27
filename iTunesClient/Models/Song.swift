@@ -9,10 +9,19 @@
 import Foundation
 
 struct Song: Decodable {
+    /// Identifier
     let id: Int
+    
+    /// Name
     let name: String
+    
+    /// Censored name
     let censoredName: String
+    
+    /// Track time
     let trackTime: Int
+    
+    /// Explicitness
     let explicitness: Explicitness
     
     private enum CodingKeys: String, CodingKey {

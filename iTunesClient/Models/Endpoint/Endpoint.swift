@@ -15,6 +15,7 @@ protocol Endpoint {
 }
 
 extension Endpoint {
+    /// URL components
     var components: URLComponents {
         var components = URLComponents(string: base)!
         components.path = path
@@ -23,6 +24,7 @@ extension Endpoint {
         return components
     }
     
+    /// URL request
     var request: URLRequest {
         let url = components.url!
         return URLRequest(url: url)
@@ -35,10 +37,12 @@ enum Itunes {
 }
 
 extension Itunes: Endpoint {
+    /// Enpoint base
     var base: String {
         return "https://itunes.apple.com"
     }
     
+    /// Enpoint path
     var path: String {
         switch self {
         case .search:
@@ -48,6 +52,7 @@ extension Itunes: Endpoint {
         }
     }
     
+    /// Endpoint query items
     var queryItems: [URLQueryItem] {
         switch self {
         case .search(let term, let media):

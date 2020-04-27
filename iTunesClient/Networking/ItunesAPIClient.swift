@@ -9,15 +9,17 @@
 import Foundation
 
 class ItunesClient: APIClient {
-    
+    /// URL Session
     var session = URLSession.shared
     
+    /// JSON decoder
     private var decoder: JSONDecoder {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .formatted(dateFormatter)
         return decoder
     }
     
+    /// Date formatter
     private var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")

@@ -33,6 +33,7 @@ enum MovieAttribute: String, ItunesAttribute {
     case ratingIndex
     case descriptionTerm
     
+    /// Attribute name
     var attributeName: String {
         return self.rawValue
     }
@@ -48,6 +49,7 @@ enum PodcastAttribute: String, ItunesAttribute {
     case keywordsTerm
     case descriptionTerm
     
+    /// Attribute name
     var attributeName: String {
         return self.rawValue
     }
@@ -62,6 +64,7 @@ enum MusicAttribute: String, ItunesAttribute {
     case ratingIndex
     case songTerm
     
+    /// Attribute name
     var attributeName: String {
         return self.rawValue
     }
@@ -74,6 +77,7 @@ enum MusicVideoAttribute: String, ItunesAttribute {
     case ratingIndex
     case songTerm
     
+    /// Attribute name
     var attributeName: String {
         return self.rawValue
     }
@@ -85,6 +89,7 @@ enum AudiobookAttribute: String, ItunesAttribute {
     case genreIndex
     case ratingIndex
     
+    /// Attribute name
     var attributeName: String {
         return self.rawValue
     }
@@ -97,6 +102,7 @@ enum ShortFilmAttribute: String, ItunesAttribute {
     case ratingIndex
     case descriptionTerm
     
+    /// Attribute name
     var attributeName: String {
         return self.rawValue
     }
@@ -105,6 +111,7 @@ enum ShortFilmAttribute: String, ItunesAttribute {
 enum SoftwareAttribute: String, ItunesAttribute {
     case softwareDeveloper
     
+    /// Attribute name
     var attributeName: String {
         return self.rawValue
     }
@@ -118,6 +125,7 @@ enum TVShowAttribute: String, ItunesAttribute {
     case ratingIndex
     case descriptionTerm
     
+    /// Attribute name
     var attributeName: String {
         return self.rawValue
     }
@@ -151,6 +159,7 @@ enum AllAttribute: String, ItunesAttribute {
     case movieTerm
     case albumTerm
     
+    /// Attribute name
     var attributeName: String {
         return self.rawValue
     }

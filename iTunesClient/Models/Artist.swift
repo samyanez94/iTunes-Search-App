@@ -9,10 +9,17 @@
 import Foundation
 
 class Artist: Decodable {
+    /// Identifier
     let id: Int
+    
+    /// Type
     let type: String
+    
+    /// Name
     let name: String
-    var albums: [Album] = []
+    
+    /// Albums
+    var albums = [Album]()
     
     private enum CodingKeys: String, CodingKey {
         case id = "artistId"
@@ -23,7 +30,10 @@ class Artist: Decodable {
 
 extension Artist {
     struct Response: Decodable {
+        /// Count
         var count: Int
+        
+        /// Artists
         var artists: [Artist]
         
         private enum CodingKeys: String, CodingKey {
