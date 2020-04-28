@@ -18,18 +18,22 @@ class Track {
     /// Censored name
     let censoredName: String
     
-    /// Track time
-    let time: Int
+    /// Track runtime
+    let runtime: Int
     
     /// Explicitness
     let explicitness: Explicitness
     
-    init(id: Int, name: String, censoredName: String, time: Int, explicitness: Explicitness) {
+    /// Track number
+    let trackNumber: Int
+    
+    init(id: Int, name: String, censoredName: String, runtime: Int, explicitness: Explicitness, trackNumber: Int) {
         self.id = id
         self.name = name
         self.censoredName = censoredName
-        self.time = time
+        self.runtime = runtime
         self.explicitness = explicitness
+        self.trackNumber = trackNumber
     }
 }
 
@@ -40,15 +44,17 @@ extension Track {
             let id = searchResult.trackID,
             let name = searchResult.trackName,
             let censoredName = searchResult.trackCensoredName,
-            let time = searchResult.trackTime,
-            let explicitness = searchResult.trackExplicitness
+            let runtime = searchResult.trackRuntime,
+            let explicitness = searchResult.trackExplicitness,
+            let trackNumber = searchResult.trackNumber
             else { return nil }
         self.init(
             id: id,
             name: name,
             censoredName: censoredName,
-            time: time,
-            explicitness: explicitness
+            runtime: runtime,
+            explicitness: explicitness,
+            trackNumber: trackNumber
          )
     }
 }

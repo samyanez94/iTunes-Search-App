@@ -12,20 +12,25 @@ struct TrackViewModel {
     /// Title
     let title: String
     
+    /// Runtime in milliseconds
+    private let runtimeInMilliseconds: Int
+    
     /// Runtime
-    let runtime: String
+    var runtime: String {
+        let runtimeInSeconds = runtimeInMilliseconds / 1000
+        let seconds = runtimeInSeconds % 60
+        let minutes = runtimeInSeconds / 60 % 60
+        return String(format: "%02i:%02i", minutes, seconds)
+    }
+    
+    /// Track number
+    let trackNumber: String
 }
 
 extension TrackViewModel {
     init(track: Track) {
         self.title = track.censoredName
-        self.runtime = TrackViewModel.runtime(from: track.time)
-    }
-    
-    private static func runtime(from trackTime: Int) -> String {
-        let timeInSeconds = trackTime / 1000
-        let minutes = Int(timeInSeconds) / 60 % 60
-        let seconds = Int(timeInSeconds) % 60
-        return String(format: "%02i:%02i", minutes, seconds)
+        self.runtimeInMilliseconds = track.runtime
+        self.trackNumber = String(track.trackNumber)
     }
 }

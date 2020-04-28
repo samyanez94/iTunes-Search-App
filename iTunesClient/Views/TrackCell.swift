@@ -19,9 +19,13 @@ class TrackCell: UITableViewCell {
     /// Runtime label
     @IBOutlet weak var runtimeLabel: UILabel!
     
+    /// Track number label
+    @IBOutlet weak var trackNumberLabel: UILabel!
+    
     func configure(with viewModel: TrackViewModel) {
         titleLabel.text = viewModel.title
         runtimeLabel.text = viewModel.runtime
+        trackNumberLabel.text = viewModel.trackNumber
     }
 
 }

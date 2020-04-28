@@ -53,7 +53,7 @@ public struct SearchResult: Decodable {
     
     let trackExplicitness: Explicitness?
     
-    let trackTime: Int?
+    let trackRuntime: Int?
     
     let trackNumber: Int?
 }
@@ -79,7 +79,7 @@ extension SearchResult {
         case trackName
         case trackCensoredName
         case trackExplicitness
-        case trackTime = "trackTimeMillis"
+        case trackRuntime = "trackTimeMillis"
         case trackNumber
     }
 }

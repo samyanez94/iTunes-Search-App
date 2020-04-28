@@ -228,8 +228,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHj-Et-s0N" userLabel="Number Label">
+                                            <rect key="frame" x="16" y="11.5" width="24" height="20.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="RKB-ex-L1P"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Track Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOn-k5-I5l">
-                                            <rect key="frame" x="28" y="11.5" width="334.5" height="20.5"/>
+                                            <rect key="frame" x="48" y="11.5" width="314.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -243,8 +252,10 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Abi-dj-YsJ" firstAttribute="leading" secondItem="cOn-k5-I5l" secondAttribute="trailing" constant="8" id="0Q1-8U-L9R"/>
-                                        <constraint firstItem="cOn-k5-I5l" firstAttribute="leading" secondItem="amw-3J-H0d" secondAttribute="leadingMargin" constant="8" id="2st-cZ-j5s"/>
+                                        <constraint firstItem="cOn-k5-I5l" firstAttribute="leading" secondItem="fHj-Et-s0N" secondAttribute="trailing" constant="8" id="6t5-wG-vU6"/>
+                                        <constraint firstItem="fHj-Et-s0N" firstAttribute="leading" secondItem="amw-3J-H0d" secondAttribute="leading" constant="16" id="Hhs-iw-NPJ"/>
                                         <constraint firstItem="cOn-k5-I5l" firstAttribute="centerY" secondItem="amw-3J-H0d" secondAttribute="centerY" id="OBK-1g-WaX"/>
+                                        <constraint firstItem="fHj-Et-s0N" firstAttribute="centerY" secondItem="amw-3J-H0d" secondAttribute="centerY" id="RaE-9v-yec"/>
                                         <constraint firstAttribute="trailing" secondItem="Abi-dj-YsJ" secondAttribute="trailing" constant="16" id="nGL-bS-bGi"/>
                                         <constraint firstItem="Abi-dj-YsJ" firstAttribute="centerY" secondItem="amw-3J-H0d" secondAttribute="centerY" id="uhv-jd-fe7"/>
                                     </constraints>
@@ -252,6 +263,7 @@
                                 <connections>
                                     <outlet property="runtimeLabel" destination="Abi-dj-YsJ" id="b4A-nd-txZ"/>
                                     <outlet property="titleLabel" destination="cOn-k5-I5l" id="Lfy-6S-Bme"/>
+                                    <outlet property="trackNumberLabel" destination="fHj-Et-s0N" id="Pt6-nQ-Qmp"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
