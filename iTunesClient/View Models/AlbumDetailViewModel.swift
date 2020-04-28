@@ -21,6 +21,9 @@ struct AlbumDetailViewModel {
     
     /// Artwork URL
     let artworkURL: URL?
+    
+    /// Explicitness
+    let isExplict: Bool
 }
 
 extension AlbumDetailViewModel {
@@ -30,5 +33,6 @@ extension AlbumDetailViewModel {
         self.genre = album.genre.rawValue
         self.releaseDate = DateFormatter(format: "MMM dd, yyyy").string(from: album.releaseDate)
         self.artworkURL = album.artworkURL(size: 400)
+        self.isExplict = album.explicitness == .explicit
     }
 }

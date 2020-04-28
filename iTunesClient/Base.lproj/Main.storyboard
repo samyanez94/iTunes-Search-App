@@ -40,13 +40,13 @@
         <scene sceneID="xWi-Kn-VHM">
             <objects>
                 <tableViewController id="6rB-X3-S0n" customClass="SearchResultsController" customModule="iTunesClient" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="deE-sE-jEF">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="deE-sE-jEF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" textLabel="mCH-Ct-ToN" style="IBUITableViewCellStyleDefault" id="pfT-Fg-04s" userLabel="Result Cell">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pfT-Fg-04s" id="Wts-jj-1r8">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -100,14 +100,22 @@
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="6UL-BR-82g">
-                                            <rect key="frame" x="88" y="9" width="87" height="62.5"/>
+                                            <rect key="frame" x="88" y="9" width="310" height="62.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aa8-lI-fr4">
-                                                    <rect key="frame" x="0.0" y="0.0" width="87" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="RMT-pT-Vc1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="111.5" height="20.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aa8-lI-fr4">
+                                                            <rect key="frame" x="0.0" y="0.0" width="87" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="e.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xD8-EH-xIe" userLabel="Album Explicitness Indicator Image View">
+                                                            <rect key="frame" x="92" y="1" width="19.5" height="18"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aph-56-Tth">
                                                     <rect key="frame" x="0.0" y="24.5" width="39" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -126,11 +134,13 @@
                                     <constraints>
                                         <constraint firstItem="6UL-BR-82g" firstAttribute="leading" secondItem="MDT-9b-5nc" secondAttribute="trailing" constant="8" id="BK5-TY-A0Y"/>
                                         <constraint firstItem="MDT-9b-5nc" firstAttribute="top" secondItem="zGl-cY-Fer" secondAttribute="top" id="CLy-IK-Aoc"/>
+                                        <constraint firstAttribute="trailing" secondItem="6UL-BR-82g" secondAttribute="trailing" constant="16" id="R8W-iJ-cWJ"/>
                                         <constraint firstItem="MDT-9b-5nc" firstAttribute="leading" secondItem="zGl-cY-Fer" secondAttribute="leading" id="Xdn-kW-bPL"/>
                                         <constraint firstItem="6UL-BR-82g" firstAttribute="centerY" secondItem="zGl-cY-Fer" secondAttribute="centerY" id="nT7-M7-peu"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="albumExplicitnessIndicatorImageView" destination="xD8-EH-xIe" id="uKS-nZ-NAZ"/>
                                     <outlet property="albumTitleLabel" destination="Aa8-lI-fr4" id="ipO-Qu-B2v"/>
                                     <outlet property="artworkView" destination="MDT-9b-5nc" id="qCL-MF-Stc"/>
                                     <outlet property="genreLabel" destination="Aph-56-Tth" id="SzH-ra-udX"/>
@@ -170,14 +180,22 @@
                                     </constraints>
                                 </imageView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Q7A-D8-LeL">
-                                    <rect key="frame" x="108" y="15" width="109" height="70.5"/>
+                                    <rect key="frame" x="108" y="15" width="290" height="70.5"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBw-30-aOC">
-                                            <rect key="frame" x="0.0" y="0.0" width="87" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9AR-C9-FxS">
+                                            <rect key="frame" x="0.0" y="0.0" width="111.5" height="20.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBw-30-aOC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="87" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="e.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AAb-iD-cY7" userLabel="Album Explicitness Indicator Image View">
+                                                    <rect key="frame" x="92" y="1" width="19.5" height="18"/>
+                                                </imageView>
+                                            </subviews>
+                                        </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gW-OV-YM3">
                                             <rect key="frame" x="0.0" y="28.5" width="39" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -195,6 +213,7 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Q7A-D8-LeL" secondAttribute="trailing" constant="16" id="8KV-xY-yRg"/>
                                 <constraint firstItem="kKp-iC-tDB" firstAttribute="top" secondItem="lQh-pm-biA" secondAttribute="top" id="E8v-Og-btQ"/>
                                 <constraint firstItem="Q7A-D8-LeL" firstAttribute="centerY" secondItem="lQh-pm-biA" secondAttribute="centerY" id="m6w-du-pAt"/>
                                 <constraint firstItem="kKp-iC-tDB" firstAttribute="leading" secondItem="lQh-pm-biA" secondAttribute="leading" id="nIE-Ap-vBc"/>
@@ -243,6 +262,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="ayQ-81-0Ua"/>
                     <connections>
+                        <outlet property="albumExplicitnessIndicatorImageView" destination="AAb-iD-cY7" id="oEc-K9-L7f"/>
                         <outlet property="albumGenreLabel" destination="2gW-OV-YM3" id="U2N-Ph-0Dg"/>
                         <outlet property="albumReleaseDateLabel" destination="Uc4-rw-AAb" id="oU9-ei-f97"/>
                         <outlet property="albumTitleLabel" destination="fBw-30-aOC" id="xzH-I4-Uve"/>
@@ -272,4 +292,7 @@
             <point key="canvasLocation" x="104.34782608695653" y="139.95535714285714"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="e.square.fill" catalog="system" width="128" height="114"/>
+    </resources>
 </document>

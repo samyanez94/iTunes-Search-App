@@ -35,7 +35,9 @@ class Track {
 
 extension Track {
     convenience init?(from searchResult: SearchResult) {
-        guard let id = searchResult.trackID,
+        guard searchResult.type == .track,
+            searchResult.kind == "song",
+            let id = searchResult.trackID,
             let name = searchResult.trackName,
             let censoredName = searchResult.trackCensoredName,
             let time = searchResult.trackTime,

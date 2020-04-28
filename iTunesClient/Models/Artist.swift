@@ -31,7 +31,9 @@ class Artist {
 
 extension Artist {
     convenience init?(from searchResult: SearchResult) {
-        guard let id = searchResult.artistID,
+        guard searchResult.type == .artist,
+            searchResult.artistType == "Artist",
+            let id = searchResult.artistID,
             let type = searchResult.artistType,
             let name = searchResult.artistName else { return nil }
         self.init(id: id, type: type, name: name)

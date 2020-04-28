@@ -26,6 +26,9 @@ class AlbumDetailController: UITableViewController {
     /// Album release date
     @IBOutlet weak var albumReleaseDateLabel: UILabel!
     
+    /// Album explicitness indicator
+    @IBOutlet weak var albumExplicitnessIndicatorImageView: UIImageView!
+    
     /// Album
     var album: Album {
         didSet {
@@ -72,6 +75,7 @@ class AlbumDetailController: UITableViewController {
         albumTitleLabel.text = viewModel.title
         albumGenreLabel.text = viewModel.genre
         albumReleaseDateLabel.text = viewModel.releaseDate
+        albumExplicitnessIndicatorImageView.isHidden = !viewModel.isExplict
         artworkView.sd_setImage(with: viewModel.artworkURL)
     }
 }

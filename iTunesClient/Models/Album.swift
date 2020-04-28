@@ -68,7 +68,9 @@ class Album {
 
 extension Album {
     convenience init?(from searchResult: SearchResult) {
-        guard let id = searchResult.collectionID,
+        guard searchResult.type == .collection,
+            searchResult.collectionType == "Album",
+            let id = searchResult.collectionID,
             let type = searchResult.collectionType,
             let artistName = searchResult.artistName,
             let name = searchResult.collectionName,

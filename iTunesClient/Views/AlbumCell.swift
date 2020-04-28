@@ -27,6 +27,9 @@ class AlbumCell: UITableViewCell {
     /// Album title label
     @IBOutlet weak var albumTitleLabel: UILabel!
     
+    /// Album explicitness indicator
+    @IBOutlet weak var albumExplicitnessIndicatorImageView: UIImageView!
+    
     /// Genre label
     @IBOutlet weak var genreLabel: UILabel!
     
@@ -42,6 +45,7 @@ class AlbumCell: UITableViewCell {
         albumTitleLabel.text = viewModel.title
         genreLabel.text = viewModel.genre
         releaseDateLabel.text = viewModel.releaseDate
+        albumExplicitnessIndicatorImageView.isHidden = !viewModel.isExplict
         artworkView.sd_setImage(with: viewModel.artworkURL, completed: nil)
     }
 }
